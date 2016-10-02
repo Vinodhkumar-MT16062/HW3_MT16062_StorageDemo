@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/readWriteOtionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="15dp"
+        android:paddingBottom="7dp">
+
+
+        <RadioGroup
+            android:id="@+id/readWriteType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/readOption">
+            <RadioButton
+                android:id="@+id/readOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read Data from File"/>
+            <RadioButton
+                android:id="@+id/writeOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Write data into File"/>
+        </RadioGroup>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/readLayout"
+        android:layout_below="@+id/readWriteOtionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:visibility="visible">
+
+        <RadioGroup
+            android:id="@+id/readStorageTypeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/readInternalOption">
+            <RadioButton
+                android:id="@+id/readInternalOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read from Internal Storage"/>
+            <RadioButton
+                android:id="@+id/readExternalOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Read from External Storage"/>
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/readExternalStorageTypeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/readExternalPublicOption"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:visibility="gone">
+            <RadioButton
+                android:id="@+id/readExternalPublicOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Public File"/>
+            <RadioButton
+                android:id="@+id/readExternalPrivateOption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private File"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/readFileNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="File Name: "
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            />
+        <EditText
+            android:id="@+id/readFileName"
+            android:layout_width="90dp"
+            android:layout_height="30dp"
+            android:background="@drawable/border"
+            android:text=""
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data from File:"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/readFileData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/readFileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/persistentRadio"
+            android:text="Read"/>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/writeLayout"
+        android:layout_below="@+id/readWriteOtionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="7dp"
+        android:paddingBottom="7dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/fileDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp">
+
+            <TextView
+                android:id="@+id/fileNameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="File Name: "
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+            <EditText
+                android:id="@+id/fileName"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/border"
+                android:text="" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/nameValueLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_below="@+id/fileDetails"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/fileDataLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="File Data: "
+                android:layout_centerHorizontal="true" />
+            <EditText
+                android:id="@+id/fileData"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/border"
+                android:text="" />
+        </android.support.v7.widget.LinearLayoutCompat>
+
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/storageRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_below="@+id/nameValueLabel"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:id="@+id/storageTxtLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Storage Type:"
+                android:layout_margin="@dimen/activity_horizontal_margin"/>
+
+            <RadioGroup
+                android:id="@+id/storageType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/isInternal">
+
+                <RadioButton
+                    android:id="@+id/isInternal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Internal Storage"/>
+
+                <RadioButton
+                    android:id="@+id/isExternal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="External Storage"/>
+            </RadioGroup>
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:id="@+id/persistentRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_below="@+id/storageRadio"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <!--<TextView-->
+                <!--android:id="@+id/persistentTxtLabel"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Should file be deleted on app uninstall?"-->
+                <!--android:layout_margin="@dimen/activity_horizontal_margin"/>-->
+
+            <RadioGroup
+                android:id="@+id/isPersistent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkedButton="@+id/persistentNo"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/persistentNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Private File" />
+
+                <RadioButton
+                    android:id="@+id/persistentYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Public File"/>
+            </RadioGroup>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+
+        <Button
+            android:id="@+id/submitFileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/persistentRadio"
+            android:text="Write"/>
+    </android.support.v7.widget.LinearLayoutCompat>
+    <!--
+    </android.support.v7.widget.LinearLayoutCompat>
+        <TextView
+            android:id="@+id/txtLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Should file be deleted on app uninstall?"
+            android:textSize="16dp" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+    -->
+
+</LinearLayout>
+</ScrollView>

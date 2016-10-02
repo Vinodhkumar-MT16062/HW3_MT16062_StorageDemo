@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StorageDemo</string>
+    <string-array name="navigationTitles">
+        <item>Shared Preference</item>
+        <item>File Storage</item>
+        <item>Database Storage</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+</resources>
